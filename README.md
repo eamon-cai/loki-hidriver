@@ -7,6 +7,7 @@ Virtual mouse and keyboard driver for Windows 7 and higher.
 3. Use the driver just like it is used in the [example](https://github.com/hedgar2017/loki-example).
 
 
+
 虚拟鼠标键盘驱动程序，使用驱动程序执行鼠标键盘操作。
 注意这个驱动目前使用的是测试证书，还没有微软颁发的正式证书，只能在win 10测试模式下执行。
 
@@ -17,6 +18,7 @@ Virtual mouse and keyboard driver for Windows 7 and higher.
 1、关闭签名校验，开启调试模式：
 在win10中，管理员模式的命令行中，执行如下命令：
 bcdedit /set nointegritychecks on
+
 bcdedit /set testsigning on
 然后重启win10，进入测试模式
 
