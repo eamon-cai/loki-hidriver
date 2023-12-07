@@ -1,10 +1,11 @@
 [Version]
 Signature="$WINDOWS NT$"
 Class=%ClassName%
-ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171}
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5173}
 Provider=%ProviderName%
 CatalogFile=hidriver.cat
 DriverVer=01/07/2018
+PnpLockdown = 1
 
 [ClassInstall32]
 Addreg=ClassReg
@@ -22,19 +23,19 @@ DefaultDestDir=12
 [Manufacturer]
 %ManufacturerName%=Microsoft,NT$ARCH$.6.1
 [Microsoft.NT$ARCH$.6.1]
-%DeviceName%=DefaultInstall,root\hidriver
+%DeviceName%=HiDriverInstall,root\hidriver
 
-[DefaultInstall.NT]
+[HiDriverInstall.NT]
 CopyFiles=Files
 [Files]
 hidriver.sys
 
-[DefaultInstall.NT.HW]
+[HiDriverInstall.NT.HW]
 AddReg=HWAddReg
 [HWAddReg]
 HKR,,"LowerFilters",0x00010008,"hidriver"
 
-[DefaultInstall.NT.Services]
+[HiDriverInstall.NT.Services]
 AddService=hidriver,0x00000000,hidriverService
 AddService=mshidkmdf,0x00000002,mshidkmdfService
 [hidriverService]
@@ -49,7 +50,7 @@ StartType=3
 ErrorControl=1
 ServiceBinary=%12%\mshidkmdf.sys
 
-[DefaultInstall.NT.Wdf]
+[HiDriverInstall.NT.Wdf]
 KmdfService=hidriver,KmdfLibrary
 [KmdfLibrary]
 KmdfLibraryVersion=$KMDFVERSION$
